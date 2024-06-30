@@ -4,11 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Hero</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
       @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+      @keyframes loop-scroll {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .animate-loop-scroll {
+        display: flex;
+        white-space: nowrap;
+        animation: loop-scroll 20s linear infinite;
+      }
+
+      .animate-loop-scroll img {
+        display: inline-block;
+        margin-right: 8px;
+      }
     </style>
   </head>
   <body>
@@ -23,7 +47,6 @@
             class="cursor-pointer w-[100px] md:w-[157.95px] h-[40px] md:h-[60px]"
           />
         </div>
-        <h1 class="md:hidden text-[25px] font-[Poppins] font-medium">Menu</h1>
         <div class="hidden md:flex items-center justify-center gap-[75px]">
           <div
             class="flex items-center justify-center gap-[32px] font-[Poppins] font-medium text-[18px]"
@@ -50,6 +73,42 @@
             RESERVER UN CALL
           </button>
         </div>
+        <div class="md:hidden off-screen-menu">
+          <ul>
+            <div
+              class="flex flex-col items-center justify-center gap-[20px] font-[Poppins] font-medium text-[18px]"
+            >
+              <h1
+                class="cursor-pointer hover:underline underline-offset-8 decoration-2 decoration-[#FF842A]"
+              >
+                Pour qui ?
+              </h1>
+              <h1
+                class="cursor-pointer hover:underline underline-offset-8 decoration-2 decoration-[#FF842A]"
+              >
+                Pour quoi ?
+              </h1>
+              <h1
+                class="cursor-pointer hover:underline underline-offset-8 decoration-2 decoration-[#FF842A]"
+              >
+                Comment ?
+              </h1>
+              <button
+                class="mt-[5px] md:mt-[25px] font-[Poppins] font-bold text-[14px] md:text-[18px] text-[#FFF] bg-[#FF842A] px-[12px] md:px-[24px] py-[8px] md:py-[16px] rounded-[10px] cursor-pointer"
+              >
+                RESERVER UN CALL
+              </button>
+            </div>
+          </ul>
+        </div>
+
+        <nav class="md:hidden">
+          <div class="ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
       </div>
     </section>
     <section class="hero bg-[#2B2B2B]">
@@ -152,7 +211,7 @@
         ></div>
       </div>
       <div
-        class="py-[40px] md:py-[58px] bg-[#2B2B2B] flex items-center justify-center"
+        class="py-[40px] md:py-[58px] bg-[#2B2B2B] flex items-center justify-center animate-loop-scroll md:animate-none"
       >
         <img src="./assets/hero/Logos.svg" alt="logos" />
       </div>
@@ -711,9 +770,9 @@
           Nous faisons de notre mieux pour maximiser les résultats de nos
           clients, tout en apportant le meilleur des accompagnement
         </h1>
-        <div class="mt-[85px] hidden md:block">
+        <div class="mt-[40px] md:mt-[85px] block">
           <div
-            class="md:ml-[50px] 2xl:ml-[0px] md:flex items-center gap-[20px]"
+            class="md:ml-[50px] 2xl:ml-[0px] flex flex-col md:flex-row items-center gap-[20px]"
           >
             <div
               class="flex items-center justify-center bg-[#FFF] w-[280px] h-[220px] rounded-[20px] shadow-[0px_2px_4px_0px_rgb(7,4,146,0.10),0px_24px_60px_0px_rgb(6,47,125,0.05),0px_12px_24px_0px_rgb(27,59,119,0.05)] text-center"
@@ -748,7 +807,7 @@
               </div>
             </div>
             <div
-              class="p-[20px] bg-[#FFF] w-[280px] h-[220px] rounded-[20px] shadow-[0px_2px_4px_0px_rgb(7,4,146,0.10),0px_24px_60px_0px_rgb(6,47,125,0.05),0px_12px_24px_0px_rgb(27,59,119,0.05)]"
+              class="flex items-center justify-center md:block p-[20px] bg-[#FFF] w-[280px] h-[220px] rounded-[20px] shadow-[0px_2px_4px_0px_rgb(7,4,146,0.10),0px_24px_60px_0px_rgb(6,47,125,0.05),0px_12px_24px_0px_rgb(27,59,119,0.05)]"
             >
               <div>
                 <div class="flex items-center justify-between">
@@ -784,7 +843,7 @@
               </div>
             </div>
             <div
-              class="p-[20px] bg-[#FFF] w-[280px] h-[220px] rounded-[20px] shadow-[0px_2px_4px_0px_rgb(7,4,146,0.10),0px_24px_60px_0px_rgb(6,47,125,0.05),0px_12px_24px_0px_rgb(27,59,119,0.05)]"
+              class="hidden md:block p-[20px] bg-[#FFF] w-[280px] h-[220px] rounded-[20px] shadow-[0px_2px_4px_0px_rgb(7,4,146,0.10),0px_24px_60px_0px_rgb(6,47,125,0.05),0px_12px_24px_0px_rgb(27,59,119,0.05)]"
             >
               <div>
                 <div class="flex items-center justify-between">
@@ -820,7 +879,7 @@
               </div>
             </div>
             <div
-              class="p-[20px] bg-[#FFF] w-[280px] h-[220px] rounded-[20px] shadow-[0px_2px_4px_0px_rgb(7,4,146,0.10),0px_24px_60px_0px_rgb(6,47,125,0.05),0px_12px_24px_0px_rgb(27,59,119,0.05)]"
+              class="hidden md:block p-[20px] bg-[#FFF] w-[280px] h-[220px] rounded-[20px] shadow-[0px_2px_4px_0px_rgb(7,4,146,0.10),0px_24px_60px_0px_rgb(6,47,125,0.05),0px_12px_24px_0px_rgb(27,59,119,0.05)]"
             >
               <div>
                 <div class="flex items-center justify-between">
@@ -857,29 +916,36 @@
             </div>
           </div>
         </div>
-        <div
-          class="mt-[30px] md:mt-[65px] mb-[25px] md:mb-[56px] flex justify-center"
-        >
-          <div
-            class="w-[90%] md:w-[92%] 2xl:w-[1370px] h-[2px] bg-[#000] opacity-[0.2]"
-          ></div>
-        </div>
-        <div
-          class="hidden md:flex items-center justify-between md:justify-center md:gap-[300px] md:mb-[57px]"
-        >
-          <img src="./assets/review/r1.svg" alt="" />
-          <img src="./assets/review/r2.svg" alt="" />
-          <img src="./assets/review/r3.svg" alt="" />
-        </div>
-        <div
-          class="mt-[30px] md:mt-[65px] mb-[25px] md:mb-[56px] flex justify-center"
-        >
-          <div
-            class="w-[90%] md:w-[92%] 2xl:w-[1370px] h-px bg-[#000] opacity-[0.2]"
-          ></div>
-        </div>
       </div>
     </section>
+    <div
+      class="mt-[30px] md:mt-[65px] mb-[25px] md:mb-[56px] flex justify-center"
+    >
+      <div
+        class="w-[90%] md:w-[92%] 2xl:w-[1370px] h-[2px] bg-[#000] opacity-[0.2]"
+      ></div>
+    </div>
+    <div
+      class="overflow-hidden flex items-center justify-between md:justify-center md:gap-[300px] md:mb-[57px] animate-loop-scroll"
+    >
+      <div class="flex items-center gap-[50px] md:gap-[200px]">
+        <img src="./assets/review/r1.svg" alt="" />
+        <img src="./assets/review/r2.svg" alt="" />
+        <img src="./assets/review/r3.svg" alt="" />
+      </div>
+      <div class="hidden md:flex items-center gap-[50px] md:gap-[200px]">
+        <img src="./assets/review/r1.svg" alt="" />
+        <img src="./assets/review/r2.svg" alt="" />
+        <img src="./assets/review/r3.svg" alt="" />
+      </div>
+    </div>
+    <div
+      class="mt-[30px] md:mt-[65px] mb-[25px] md:mb-[56px] flex justify-center"
+    >
+      <div
+        class="w-[90%] md:w-[92%] 2xl:w-[1370px] h-px bg-[#000] opacity-[0.2]"
+      ></div>
+    </div>
     <section class="Qui bg-[#2B2B2B] font-[Poppins] pb-[80px]">
       <div class="mx-auto px-[20px] md:px-[50px] 2xl:px-[0px]">
         <h1
@@ -990,62 +1056,116 @@
         class="md:mt-[80px] mx-auto flex items-center justify-center md:w-[90%] 2xl:w-[1383px] py-[36px] md:border-[2px] border-[#ECEEF6] rounded-[20px] md:shadow-[0px_4px_4px_0px_rgb(0,0,0,0.25)]"
       >
         <div class="grid md:grid-cols-2 gap-[20px] px-[20px] 2xl:px-[47px]">
-          <div
-            class="grid grid-cols-5 items-center gap-[20px] md:gap-[60px] 2xl:w-[630px] px-[20px] py-[20px] md:py-[47px] rounded-[16px] shadow-[0px_5px_16px_0px_rgb(8,15,52,0.06)]"
-          >
-            <h1
-              class="text-[#000] font-[Poppins] md:text-[20px] font-medium col-span-4"
-            >
-              Qu'est-ce qui vous différencie des autres agences email marketing
-              ?
-            </h1>
-            <img
-              src="./assets/review/rplus.svg"
-              alt=""
-              class="cursor-pointer"
-            />
+          <div class="accordion">
+            <div class="accordion__question">
+              <div
+                class="grid grid-cols-5 items-center gap-[20px] md:gap-[60px] 2xl:w-[630px] px-[20px] py-[20px] md:py-[47px] rounded-[16px] shadow-[0px_5px_16px_0px_rgb(8,15,52,0.06)]"
+              >
+                <h1
+                  class="text-[#000] font-[Poppins] md:text-[20px] font-medium col-span-4"
+                >
+                  Qu'est-ce qui vous différencie des autres agences email
+                  marketing ?
+                </h1>
+                <img
+                  src="./assets/review/rplus.svg"
+                  alt=""
+                  class="cursor-pointer icon-toggle"
+                />
+                <div
+                  class="accordion__answer col-span-5 md:col-span-4 mt-[-10px] md:mt-[-40px] font-[Poppins] md:text-[20px] font-medium"
+                >
+                  <p class="text-[#747474]">
+                    Ut enim ad minim veniam quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat aute irure
+                    dolor
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div
-            class="px-[20px] grid grid-cols-5 items-center gap-[20px] md:gap-[60px] 2xl:w-[630px] py-[20px] md:py-[47px] rounded-[16px] shadow-[0px_5px_16px_0px_rgb(8,15,52,0.06)]"
-          >
-            <h1
-              class="text-[#000] font-[Poppins] md:text-[20px] font-medium col-span-4"
-            >
-              Qui peut bénéficier de vos services ?
-            </h1>
-            <img
-              src="./assets/review/rplus.svg"
-              alt=""
-              class="cursor-pointer"
-            />
+
+          <div class="accordion">
+            <div class="accordion__question">
+              <div
+                class="grid grid-cols-5 items-center gap-[20px] md:gap-[60px] 2xl:w-[630px] px-[20px] py-[20px] md:py-[47px] rounded-[16px] shadow-[0px_5px_16px_0px_rgb(8,15,52,0.06)]"
+              >
+                <h1
+                  class="text-[#000] font-[Poppins] md:text-[20px] font-medium col-span-4"
+                >
+                  Qui peut bénéficier de vos services ?
+                </h1>
+                <img
+                  src="./assets/review/rplus.svg"
+                  alt=""
+                  class="cursor-pointer icon-toggle"
+                />
+                <div
+                  class="accordion__answer col-span-5 md:col-span-4 mt-[-10px] md:mt-[-40px] font-[Poppins] md:text-[20px] font-medium"
+                >
+                  <p class="text-[#747474]">
+                    Ut enim ad minim veniam quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat aute irure
+                    dolor
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div
-            class="p-[20px] grid grid-cols-5 items-center gap-[20px] md:gap-[60px] 2xl:w-[630px] py-[20px] md:py-[47px] rounded-[16px] shadow-[0px_5px_16px_0px_rgb(8,15,52,0.06)]"
-          >
-            <h1
-              class="text-[#000] font-[Poppins] md:text-[20px] font-medium col-span-4"
-            >
-              Combien de temps dois-je attendre avant de voir des résultats ?
-            </h1>
-            <img
-              src="./assets/review/rplus.svg"
-              alt=""
-              class="cursor-pointer"
-            />
+          <div class="accordion">
+            <div class="accordion__question">
+              <div
+                class="grid grid-cols-5 items-center gap-[20px] md:gap-[60px] 2xl:w-[630px] px-[20px] py-[20px] md:py-[47px] rounded-[16px] shadow-[0px_5px_16px_0px_rgb(8,15,52,0.06)]"
+              >
+                <h1
+                  class="text-[#000] font-[Poppins] md:text-[20px] font-medium col-span-4"
+                >
+                  QCombien de temps dois-je attendre avant de voir des résultats
+                  ?
+                </h1>
+                <img
+                  src="./assets/review/rplus.svg"
+                  alt=""
+                  class="cursor-pointer icon-toggle"
+                />
+                <div
+                  class="accordion__answer col-span-5 md:col-span-4 mt-[-10px] md:mt-[-40px] font-[Poppins] md:text-[20px] font-medium"
+                >
+                  <p class="text-[#747474]">
+                    Ut enim ad minim veniam quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat aute irure
+                    dolor
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div
-            class="p-[20px] grid grid-cols-5 items-center gap-[20px] md:gap-[60px] 2xl:w-[630px] py-[20px] md:py-[47px] rounded-[16px] shadow-[0px_5px_16px_0px_rgb(8,15,52,0.06)]"
-          >
-            <h1
-              class="text-[#000] font-[Poppins] md:text-[20px] font-medium col-span-4"
-            >
-              Quelle est votre garantie ?
-            </h1>
-            <img
-              src="./assets/review/rplus.svg"
-              alt=""
-              class="cursor-pointer"
-            />
+          <div class="accordion">
+            <div class="accordion__question">
+              <div
+                class="grid grid-cols-5 items-center gap-[20px] md:gap-[60px] 2xl:w-[630px] px-[20px] py-[20px] md:py-[47px] rounded-[16px] shadow-[0px_5px_16px_0px_rgb(8,15,52,0.06)]"
+              >
+                <h1
+                  class="text-[#000] font-[Poppins] md:text-[20px] font-medium col-span-4"
+                >
+                  Quelle est votre garantie ?
+                </h1>
+                <img
+                  src="./assets/review/rplus.svg"
+                  alt=""
+                  class="cursor-pointer icon-toggle"
+                />
+                <div
+                  class="accordion__answer col-span-5 md:col-span-4 mt-[-10px] md:mt-[-40px] font-[Poppins] md:text-[20px] font-medium"
+                >
+                  <p class="text-[#747474]">
+                    Ut enim ad minim veniam quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat aute irure
+                    dolor
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1168,5 +1288,29 @@
         </div>
       </div>
     </section>
+    <script>
+      const hamMenu = document.querySelector(".ham-menu");
+      const offScreenMenu = document.querySelector(".off-screen-menu");
+      hamMenu.addEventListener("click", () => {
+        hamMenu.classList.toggle("active");
+        offScreenMenu.classList.toggle("active");
+      });
+
+      let accordions = document.querySelectorAll(".accordion");
+      accordions.forEach((accordion) => {
+        accordion.addEventListener("click", () => {
+          // Toggle the active class on the accordion
+          accordion.classList.toggle("active");
+
+          // Find the icon within the clicked accordion and toggle the active class
+          let icon = accordion.querySelector(".icon-toggle");
+          if (accordion.classList.contains("active")) {
+            icon.src = "./assets/review/rminus.svg"; // Change to minus icon when active
+          } else {
+            icon.src = "./assets/review/rplus.svg"; // Change to plus icon when inactive
+          }
+        });
+      });
+    </script>
   </body>
 </html>
